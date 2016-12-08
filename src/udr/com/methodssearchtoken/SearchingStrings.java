@@ -3,8 +3,14 @@
  */
 public class SearchingStrings {
     public static void main(String[] args) {
+        
+        String a = "/bla/ja/hier/zal/je/het";
 
-         String test = "Paint the cup and then the plate.";
+        String[] tokens = a.split("/",5);
+        String b = a.split("/",5)[3];
+            System.out.println(b);
+
+        String test = "Paint the cup and then the plate.";
         StringBuilder test2 = new StringBuilder("Paint the cup and then the plate.");
 
         /**
