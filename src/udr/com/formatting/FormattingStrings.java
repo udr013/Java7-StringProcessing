@@ -1,9 +1,12 @@
+package src.udr.com.formatting;
+
 import java.util.Collection;
 
 /**
  * Created by udr013 on 23-3-2016.
  */
 public class FormattingStrings {
+
     public static void main(String[] args) {
 
         /**
