@@ -1,3 +1,5 @@
+package src.udr.com.methodssearchtoken;
+
 /**
  * Created by udr013 on 21-3-2016.
  */
@@ -57,7 +59,7 @@ public class SearchingStrings {
          *
          *  */
 
-        String[]tokens = test.split("the");
+        tokens = test.split("the");
         for (String c :tokens){
             System.out.println(c);
         }

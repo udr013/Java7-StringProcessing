@@ -1,4 +1,4 @@
-package udr.com.regularexpressions;
+package src.udr.com.regularexpressions;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,14 +15,18 @@ public class Qualifiers {
          *  + - one or more
          * */
 
-        String regex = "colou+r"; //colou+r
-        //String regex = "f?all";
+//        String regex = "colou+r"; //colou+r
+        String regex = "[bf]?all";
 
-        Pattern pattern = Pattern.compile(regex);
+        Pattern pattern = Pattern.compile("[bf]?all");
         Matcher matcher = pattern.matcher(testString);
+        System.out.println("matcher: " + matcher); // matcher: java.util.regex.Matcher[pattern=[bf]?all region=0,86 lastmatch=]
 
-        //while (matcher.find())
-        //System.out.println(matcher.group());
+        while (matcher.find()) {
+            System.out.println(" found: " + matcher.group()); //actually the result it found.
+            System.out.println("started at: " + matcher.start()); // index in the char array where it starts
+            System.out.println("to: " + matcher.end()); //index in the char array after the last char of the match aka to
+        }
 
         String newString = matcher.replaceAll("color");
         System.out.println(newString);

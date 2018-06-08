@@ -11,9 +11,9 @@ public class ReplacingStrings {
          */
 
         String  s  = "RENT-TENT";
-
-        //s.substring(2,5) = "NT-"
-        //s.subSequence(s.indexOf("T"),s.lastIndexOf('N')) = "T-TE
+        System.out.println(s.substring(2,5)); // "NT-"
+        System.out.println(s.subSequence(2,5)); // "NT-"
+        System.out.println(s.subSequence(s.indexOf("T"),s.lastIndexOf('N'))); // "T-TE
         String newS = s.replace(s.substring(2,5),s.subSequence(s.indexOf("T"),s.lastIndexOf('N')));
 
         System.out.println(newS);// prints: RET-TETENT
@@ -23,14 +23,13 @@ public class ReplacingStrings {
          * */
 
         String t = "cat cup copp";
-        // Note: replaceAll(String regex, String replacement)
-        String newT = t.replaceAll("c.p\\B", "()");
-        System.out.println(newT);
-        // Note: replaceFirst(String regex, String replacement)
-        newT = t.replaceFirst("c.p\\b", "()");
-        System.out.println(newT);
-        newT = t.replace(new StringBuilder("cat"),"()");
-        System.out.println(newT);
+        String newT = t.replaceAll("c.\\B", "()");
+        System.out.println(newT); // ()t ()p ()pp
 
+        newT = t.replaceFirst(".p\\b", "()");
+        System.out.println(newT); // cat c() copp
+
+        newT = t.replace(new StringBuilder("cat"),"()");
+        System.out.println(newT); // () cup copp
     }
 }
